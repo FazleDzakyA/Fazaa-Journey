@@ -437,8 +437,8 @@ export default function App() {
     <div
       className={`relative min-h-screen w-full transition-colors duration-500 font-sans overflow-x-hidden selection:bg-red-500 selection:text-white ${
         isLightMode
-          ? 'bg-[#f4f5f7] text-zinc-900'
-          : 'bg-gradient-to-br from-[#0a0b12] via-[#121124] to-[#160c18] text-white'
+          ? 'bg-gradient-to-br from-[#f8fafc] via-[#eef2f7] to-[#e2e8f0] light-grid-canvas text-zinc-900'
+          : 'bg-gradient-to-br from-[#0a0b12] via-[#121124] to-[#160c18] dark-grid-canvas text-white'
       }`}
     >
       
@@ -447,9 +447,10 @@ export default function App() {
           ========================================================================= */}
       {isLightMode ? (
         <>
-          <div className="pointer-events-none fixed -top-40 -left-40 h-[600px] w-[600px] rounded-full bg-red-400/10 blur-[130px] z-0" />
-          <div className="pointer-events-none fixed top-1/2 -right-40 h-[650px] w-[650px] rounded-full bg-zinc-400/20 blur-[140px] z-0" />
-          <div className="pointer-events-none fixed -bottom-40 left-1/3 h-[500px] w-[500px] rounded-full bg-slate-300/30 blur-[130px] z-0" />
+          <div className="pointer-events-none fixed -top-40 -left-40 h-[650px] w-[650px] rounded-full bg-red-500/18 blur-[140px] z-0 animate-pulse" />
+          <div className="pointer-events-none fixed top-1/3 -right-40 h-[700px] w-[700px] rounded-full bg-orange-400/16 blur-[150px] z-0" />
+          <div className="pointer-events-none fixed top-2/3 -left-40 h-[600px] w-[600px] rounded-full bg-indigo-400/16 blur-[140px] z-0" />
+          <div className="pointer-events-none fixed -bottom-40 right-1/4 h-[550px] w-[550px] rounded-full bg-emerald-400/15 blur-[130px] z-0" />
         </>
       ) : (
         <>
@@ -464,9 +465,9 @@ export default function App() {
           ========================================================================= */}
       <nav className="sticky top-4 z-50 mx-auto max-w-7xl px-4 sm:px-8">
         <div
-          className={`relative flex items-center justify-between rounded-full backdrop-blur-2xl px-5 py-3 transition-colors duration-500 shadow-xl ${
+          className={`relative flex items-center justify-between rounded-full backdrop-blur-2xl px-5 py-3 transition-all duration-500 shadow-xl ${
             isLightMode
-              ? 'bg-white/85 border border-black/10 shadow-[0_8px_32px_rgba(0,0,0,0.08)]'
+              ? 'bg-white/40 border border-white/80 shadow-[0_10px_35px_rgba(0,0,0,0.06),inset_0_1.5px_2px_rgba(255,255,255,0.95),inset_0_-1px_1px_rgba(0,0,0,0.03)]'
               : 'bg-white/[0.08] border border-white/20 shadow-[0_8px_32px_rgba(0,0,0,0.37),inset_0_1px_1px_rgba(255,255,255,0.4)]'
           }`}
         >
@@ -482,7 +483,7 @@ export default function App() {
             <div className="relative h-9 w-9 rounded-full bg-gradient-to-tr from-red-600 to-orange-400 p-[2px] shadow-lg shadow-red-500/30 group-hover:scale-105 transition-transform">
               <div
                 className={`h-full w-full rounded-full flex items-center justify-center font-bold text-sm tracking-wider ${
-                  isLightMode ? 'bg-white text-zinc-900' : 'bg-[#100f1c] text-white'
+                  isLightMode ? 'bg-white/80 text-zinc-900 backdrop-blur-sm' : 'bg-[#100f1c] text-white'
                 }`}
               >
                 FZ
@@ -493,7 +494,9 @@ export default function App() {
                 <span className={`font-bold tracking-tight text-base ${isLightMode ? 'text-zinc-900' : 'text-white'}`}>
                   FAZA
                 </span>
-                <span className="rounded-full bg-red-500/20 border border-red-500/30 px-2 py-0.2 text-[10px] font-mono text-red-500 font-semibold">
+                <span className={`rounded-full border px-2 py-0.2 text-[10px] font-mono font-semibold ${
+                  isLightMode ? 'bg-red-500/10 border-red-500/25 text-red-600' : 'bg-red-500/20 border-red-500/30 text-red-500'
+                }`}>
                   11 MILESTONES
                 </span>
               </div>
@@ -506,14 +509,14 @@ export default function App() {
           {/* Center Links */}
           <div
             className={`hidden md:flex items-center gap-1 rounded-full p-1 backdrop-blur-md ${
-              isLightMode ? 'bg-black/5 border border-black/10' : 'bg-white/[0.05] border border-white/10'
+              isLightMode ? 'bg-white/40 border border-white/70 shadow-[inset_0_1px_1px_rgba(255,255,255,0.8)]' : 'bg-white/[0.05] border border-white/10'
             }`}
           >
             <a
               href="#timeline-story"
               onClick={() => soundEnabled && playCuteSound('pop')}
               className={`rounded-full px-4 py-1.5 text-xs font-semibold transition-all ${
-                isLightMode ? 'text-zinc-700 hover:text-black hover:bg-black/10' : 'text-white/80 hover:text-white hover:bg-white/10'
+                isLightMode ? 'text-zinc-700 hover:text-black hover:bg-white/70' : 'text-white/80 hover:text-white hover:bg-white/10'
               }`}
             >
               Alur 11 Babak
@@ -522,7 +525,7 @@ export default function App() {
               href="#profile-hub"
               onClick={() => soundEnabled && playCuteSound('pop')}
               className={`rounded-full px-4 py-1.5 text-xs font-semibold transition-all ${
-                isLightMode ? 'text-zinc-700 hover:text-black hover:bg-black/10' : 'text-white/80 hover:text-white hover:bg-white/10'
+                isLightMode ? 'text-zinc-700 hover:text-black hover:bg-white/70' : 'text-white/80 hover:text-white hover:bg-white/10'
               }`}
             >
               Info Kontak & Profil
@@ -535,16 +538,16 @@ export default function App() {
             {/* TOMBOL "TERANG MODE CAH" */}
             <button
               onClick={toggleTheme}
-              className={`inline-flex items-center gap-1.5 rounded-full px-3.5 py-1.5 text-xs font-bold transition-all active:scale-90 cursor-pointer shadow-md ${
+              className={`inline-flex items-center gap-1.5 rounded-full px-3.5 py-1.5 text-xs font-bold transition-all active:scale-90 cursor-pointer shadow-md backdrop-blur-md ${
                 isLightMode
-                  ? 'bg-zinc-900 text-white hover:bg-black'
+                  ? 'bg-white/60 hover:bg-white/90 text-zinc-900 border border-white/90 shadow-[0_4px_15px_rgba(0,0,0,0.05),inset_0_1px_1px_white]'
                   : 'bg-white text-zinc-900 hover:bg-white/90'
               }`}
               title="Ganti Tema Tampilan"
             >
               {isLightMode ? (
                 <>
-                  <Moon className="w-3.5 h-3.5 text-amber-400" />
+                  <Moon className="w-3.5 h-3.5 text-amber-500" />
                   <span>gelap mode cah</span>
                 </>
               ) : (
@@ -560,7 +563,7 @@ export default function App() {
               onClick={handleInstallApp}
               className={`hidden sm:inline-flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-xs font-semibold backdrop-blur-md transition-all active:scale-95 cursor-pointer ${
                 isLightMode
-                  ? 'bg-black/5 border-black/15 text-zinc-800 hover:bg-black/10'
+                  ? 'bg-white/50 border-white/80 text-zinc-800 hover:bg-white/80 shadow-sm'
                   : 'bg-white/10 border-white/20 text-white/90 hover:bg-white/20'
               }`}
               title="Pasang aplikasi di HP/Mobile"
@@ -576,9 +579,9 @@ export default function App() {
                 if (!soundEnabled) playCuteSound('sparkle')
               }}
               title={soundEnabled ? 'Matikan Suara' : 'Nyalakan Suara'}
-              className={`h-9 w-9 rounded-full border flex items-center justify-center transition-all active:scale-90 cursor-pointer shadow ${
+              className={`h-9 w-9 rounded-full border flex items-center justify-center transition-all active:scale-90 cursor-pointer backdrop-blur-md ${
                 isLightMode
-                  ? 'bg-black/5 border-black/15 text-zinc-800 hover:bg-black/10'
+                  ? 'bg-white/50 border-white/80 text-zinc-800 hover:bg-white/80 shadow-sm'
                   : 'bg-white/10 border-white/20 text-white/80 hover:text-white'
               }`}
             >
@@ -610,7 +613,9 @@ export default function App() {
           
           <div className="lg:col-span-7 flex flex-col justify-center">
             
-            <div className="inline-flex items-center gap-2 rounded-full bg-red-500/10 border border-red-500/20 px-3.5 py-1.5 text-xs font-semibold text-red-500 mb-6 backdrop-blur-xl w-fit">
+            <div className={`inline-flex items-center gap-2 rounded-full border px-3.5 py-1.5 text-xs font-semibold mb-6 backdrop-blur-xl w-fit ${
+              isLightMode ? 'bg-red-500/10 border-red-500/25 text-red-600' : 'bg-red-500/10 border-red-500/20 text-red-500'
+            }`}>
               <Flame className="w-3.5 h-3.5 text-red-500 animate-bounce" />
               <span>FAZLE DZAKY ARYAGUNA • THE FALCON ODYSSEY</span>
             </div>
@@ -644,7 +649,7 @@ export default function App() {
                 <div
                   className={`flex items-center gap-2 rounded-2xl px-5 py-3 text-sm font-bold backdrop-blur-xl transition-colors ${
                     isLightMode
-                      ? 'bg-white text-zinc-900 group-hover:bg-transparent group-hover:text-white'
+                      ? 'bg-white/80 text-zinc-900 group-hover:bg-transparent group-hover:text-white'
                       : 'bg-[#170e17]/90 text-white group-hover:bg-transparent'
                   }`}
                 >
@@ -658,7 +663,7 @@ export default function App() {
                 onClick={() => soundEnabled && playCuteSound('pop')}
                 className={`inline-flex items-center gap-2 rounded-2xl border px-5 py-3 text-sm font-semibold backdrop-blur-xl transition-all hover:scale-105 active:scale-95 shadow-md cursor-pointer ${
                   isLightMode
-                    ? 'bg-white/80 border-black/15 text-zinc-900 hover:bg-white'
+                    ? 'bg-white/50 border-white/80 text-zinc-900 hover:bg-white/80 shadow-[0_10px_25px_rgba(0,0,0,0.04),inset_0_1px_1px_white]'
                     : 'bg-white/[0.08] border-white/20 text-white hover:bg-white/[0.15]'
                 }`}
               >
@@ -670,7 +675,7 @@ export default function App() {
                 onClick={handleInstallApp}
                 className={`inline-flex items-center gap-2 rounded-2xl border px-4 py-3 text-sm font-semibold backdrop-blur-xl transition-all hover:scale-105 active:scale-95 shadow-md cursor-pointer ${
                   isLightMode
-                    ? 'bg-white/80 border-black/15 text-zinc-800 hover:bg-white'
+                    ? 'bg-white/50 border-white/80 text-zinc-800 hover:bg-white/80 shadow-[0_10px_25px_rgba(0,0,0,0.04),inset_0_1px_1px_white]'
                     : 'bg-white/[0.08] border-white/20 text-white/90 hover:bg-white/[0.15]'
                 }`}
               >
@@ -687,31 +692,33 @@ export default function App() {
             <TiltGlassCard
               className={`w-full max-w-md rounded-3xl backdrop-blur-2xl border p-3.5 shadow-2xl transition-all duration-300 ${
                 isLightMode
-                  ? 'bg-white/45 border-white/80 shadow-[0_20px_50px_rgba(0,0,0,0.06),inset_0_1px_2px_rgba(255,255,255,0.95)]'
+                  ? 'bg-white/40 border-white/80 shadow-[0_20px_50px_rgba(0,0,0,0.06),inset_0_1.5px_2px_rgba(255,255,255,0.95),inset_0_-1px_1px_rgba(0,0,0,0.03)]'
                   : 'bg-white/[0.08] border-white/25 shadow-[0_20px_50px_rgba(0,0,0,0.5),inset_0_1px_1px_rgba(255,255,255,0.4)]'
               }`}
             >
               
               {/* Speech Bubble */}
               <div
-                className={`relative mb-3 rounded-2xl p-3.5 shadow-lg border ${
-                  isLightMode ? 'bg-zinc-900 text-white border-zinc-800' : 'bg-white/95 text-zinc-900 border-white'
+                className={`relative mb-3 rounded-2xl p-3.5 shadow-lg border backdrop-blur-xl ${
+                  isLightMode
+                    ? 'bg-white/75 text-zinc-900 border-white/90 shadow-[0_10px_25px_rgba(0,0,0,0.05),inset_0_1.5px_2px_white]'
+                    : 'bg-white/95 text-zinc-900 border-white'
                 }`}
               >
                 <div className="flex items-start gap-2.5">
                   <span className="text-xl">🦅</span>
                   <div>
-                    <p className={`text-xs font-semibold leading-relaxed ${isLightMode ? 'text-zinc-100' : 'text-zinc-800'}`}>
+                    <p className={`text-xs font-semibold leading-relaxed ${isLightMode ? 'text-zinc-900' : 'text-zinc-800'}`}>
                       {speechBubble}
                     </p>
-                    <span className={`text-[10px] font-mono block mt-1 ${isLightMode ? 'text-zinc-400' : 'text-zinc-500'}`}>
+                    <span className={`text-[10px] font-mono block mt-1 ${isLightMode ? 'text-zinc-500' : 'text-zinc-500'}`}>
                       Siluet falcon meluncur dinamis di garis tengah mengikuti scroll!
                     </span>
                   </div>
                 </div>
                 <div
                   className={`absolute -bottom-2 left-10 h-0 w-0 border-x-8 border-x-transparent border-t-8 ${
-                    isLightMode ? 'border-t-zinc-900' : 'border-t-white'
+                    isLightMode ? 'border-t-white/80' : 'border-t-white'
                   }`}
                 />
               </div>
@@ -821,8 +828,8 @@ export default function App() {
                   {/* Node Dot on Central Line */}
                   <div className="absolute left-6 md:left-1/2 -translate-x-1/2 z-20 flex items-center justify-center">
                     <div
-                      className={`h-9 w-9 rounded-full border-2 border-red-500 flex items-center justify-center text-xs font-mono font-bold shadow-[0_0_15px_rgba(239,68,68,0.6)] ${
-                        isLightMode ? 'bg-white text-zinc-900' : 'bg-[#120f1e] text-white'
+                      className={`h-9 w-9 rounded-full border-2 border-red-500 flex items-center justify-center text-xs font-mono font-bold shadow-[0_0_15px_rgba(239,68,68,0.5)] ${
+                        isLightMode ? 'bg-white/80 backdrop-blur-md text-zinc-900 shadow-[0_0_15px_rgba(239,68,68,0.4),inset_0_1px_1px_white]' : 'bg-[#120f1e] text-white'
                       }`}
                     >
                       {item.stepNumber}
@@ -835,7 +842,7 @@ export default function App() {
                     <TiltGlassCard
                       className={`rounded-3xl backdrop-blur-2xl border p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 ${
                         isLightMode
-                          ? 'bg-white/45 border-white/80 text-zinc-900 shadow-[0_15px_35px_rgba(0,0,0,0.05),inset_0_1px_2px_rgba(255,255,255,0.95)] hover:border-white hover:bg-white/65 hover:shadow-[0_20px_45px_rgba(0,0,0,0.1)]'
+                          ? 'bg-white/40 border-white/80 text-zinc-900 shadow-[0_20px_50px_rgba(0,0,0,0.05),inset_0_1.5px_2px_rgba(255,255,255,0.95),inset_0_-1px_1px_rgba(0,0,0,0.03)] hover:border-white hover:bg-white/60 hover:shadow-[0_25px_60px_rgba(0,0,0,0.08)]'
                           : `bg-white/[0.07] ${item.borderColor} text-white shadow-[0_15px_35px_rgba(0,0,0,0.4),inset_0_1px_1px_rgba(255,255,255,0.25)] hover:border-white/50 hover:bg-white/[0.09]`
                       }`}
                     >
@@ -844,7 +851,7 @@ export default function App() {
                         <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
                           <span
                             className={`inline-flex items-center gap-1.5 rounded-full border px-3 py-1 text-xs font-semibold ${
-                              isLightMode ? 'bg-black/5 border-black/10 text-zinc-800' : 'bg-white/[0.1] border border-white/20 text-white/90'
+                              isLightMode ? 'bg-white/60 backdrop-blur-md border-white/90 text-zinc-800 shadow-[inset_0_1px_1px_white]' : 'bg-white/[0.1] border border-white/20 text-white/90'
                             }`}
                           >
                             <span>{item.tag}</span>
@@ -873,9 +880,9 @@ export default function App() {
                           {item.highlightProjects.map((p) => (
                             <div
                               key={p.name}
-                              className={`rounded-xl border p-2.5 flex items-center justify-between gap-2 transition-colors ${
+                              className={`rounded-xl border p-2.5 flex items-center justify-between gap-2 transition-all ${
                                 isLightMode
-                                  ? 'bg-zinc-100/80 border-black/10 hover:border-black/25'
+                                  ? 'bg-white/45 backdrop-blur-md border-white/80 shadow-[inset_0_1px_2px_rgba(255,255,255,0.9)] hover:bg-white/75 hover:border-white hover:shadow-md'
                                   : 'bg-black/40 border-white/10 hover:border-white/30'
                               }`}
                             >
@@ -903,21 +910,21 @@ export default function App() {
 
                         <div
                           className={`mt-4 p-3 rounded-xl border-l-2 border-red-500 text-xs italic ${
-                            isLightMode ? 'bg-zinc-100 text-zinc-700' : 'bg-white/[0.04] text-white/70'
+                            isLightMode ? 'bg-white/40 backdrop-blur-md border border-white/80 shadow-[inset_0_1px_2px_rgba(255,255,255,0.8)] text-zinc-700' : 'bg-white/[0.04] text-white/70'
                           }`}
                         >
                           {item.quote}
                         </div>
                       </div>
 
-                      <div className={`mt-6 pt-4 border-t flex flex-wrap items-center justify-between gap-2 ${isLightMode ? 'border-black/10' : 'border-white/10'}`}>
+                      <div className={`mt-6 pt-4 border-t flex flex-wrap items-center justify-between gap-2 ${isLightMode ? 'border-black/5' : 'border-white/10'}`}>
                         <div className="flex flex-wrap gap-1.5">
                           {item.tech.map((t) => (
                             <span
                               key={t}
                               className={`rounded-md border px-2 py-0.5 text-[10px] font-mono ${
                                 isLightMode
-                                  ? 'bg-zinc-200/80 border-black/10 text-zinc-800'
+                                  ? 'bg-white/50 backdrop-blur-md border-white/70 text-zinc-800 shadow-[inset_0_1px_1px_rgba(255,255,255,0.9)]'
                                   : 'bg-white/[0.06] border-white/10 text-white/75'
                               }`}
                             >
@@ -931,7 +938,11 @@ export default function App() {
                             if (soundEnabled) playCuteSound('sparkle')
                             setSelectedMilestone(item)
                           }}
-                          className="inline-flex items-center gap-1 text-xs font-semibold text-red-500 hover:text-red-400 transition-colors cursor-pointer"
+                          className={`inline-flex items-center gap-1 text-xs font-semibold px-2.5 py-1 rounded-lg border transition-all cursor-pointer ${
+                            isLightMode
+                              ? 'text-red-600 bg-white/50 hover:bg-white/80 border-white/80 shadow-sm'
+                              : 'text-red-400 hover:text-red-300 border-transparent hover:bg-white/5'
+                          }`}
                         >
                           <span>Rangkuman</span>
                           <ChevronRight className="w-3.5 h-3.5" />
@@ -958,7 +969,7 @@ export default function App() {
         <div
           className={`relative rounded-3xl border p-8 sm:p-12 backdrop-blur-3xl shadow-2xl overflow-hidden ${
             isLightMode
-              ? 'bg-white/85 border-black/10 shadow-[0_25px_60px_rgba(0,0,0,0.1)]'
+              ? 'bg-gradient-to-br from-white/45 via-white/30 to-white/40 border-white/80 shadow-[0_25px_60px_rgba(0,0,0,0.06),inset_0_1.5px_2px_rgba(255,255,255,0.95),inset_0_-1px_1px_rgba(0,0,0,0.03)]'
               : 'bg-gradient-to-br from-white/[0.09] via-white/[0.05] to-black/60 border-white/20 shadow-[0_25px_60px_rgba(0,0,0,0.5),inset_0_1px_1px_rgba(255,255,255,0.4)]'
           }`}
         >
@@ -969,7 +980,7 @@ export default function App() {
           <div className="relative z-10">
             
             {/* Header Profile */}
-            <div className={`flex flex-col md:flex-row md:items-center justify-between gap-6 pb-8 border-b ${isLightMode ? 'border-black/10' : 'border-white/15'}`}>
+            <div className={`flex flex-col md:flex-row md:items-center justify-between gap-6 pb-8 border-b ${isLightMode ? 'border-black/5' : 'border-white/15'}`}>
               
               <div className="flex items-center gap-4">
                 <div className="relative h-16 w-16 sm:h-20 sm:w-20 rounded-2xl overflow-hidden border-2 border-red-500/50 shadow-xl shadow-red-500/20 shrink-0">
@@ -1015,7 +1026,7 @@ export default function App() {
               <div
                 className={`group relative rounded-3xl p-5 border transition-all duration-500 overflow-hidden flex flex-col justify-between hover:-translate-y-1.5 hover:shadow-2xl ${
                   isLightMode
-                    ? 'bg-white/45 hover:bg-white/70 border-white/80 shadow-[0_10px_30px_rgba(0,0,0,0.05),inset_0_1px_2px_rgba(255,255,255,0.95)]'
+                    ? 'bg-white/40 hover:bg-white/65 backdrop-blur-2xl border-white/80 shadow-[0_15px_35px_rgba(0,0,0,0.04),inset_0_1.5px_2px_rgba(255,255,255,0.95),inset_0_-1px_1px_rgba(0,0,0,0.03)]'
                     : 'bg-white/[0.07] hover:bg-white/[0.12] border-white/15 shadow-xl hover:border-emerald-500/40'
                 }`}
               >
@@ -1065,8 +1076,8 @@ export default function App() {
                   </a>
                   <button
                     onClick={() => copyToClipboard('https://wa.me/6281311636736', 'wa')}
-                    className={`rounded-xl p-2 transition-all cursor-pointer ${
-                      isLightMode ? 'bg-white/80 hover:bg-white text-zinc-800 border border-white' : 'bg-white/10 hover:bg-white/20 text-white'
+                    className={`rounded-xl p-2 transition-all cursor-pointer backdrop-blur-md ${
+                      isLightMode ? 'bg-white/70 hover:bg-white text-zinc-800 border border-white/90 shadow-sm' : 'bg-white/10 hover:bg-white/20 text-white'
                     }`}
                     title="Copy Link WhatsApp"
                   >
@@ -1079,7 +1090,7 @@ export default function App() {
               <div
                 className={`group relative rounded-3xl p-5 border transition-all duration-500 overflow-hidden flex flex-col justify-between hover:-translate-y-1.5 hover:shadow-2xl ${
                   isLightMode
-                    ? 'bg-white/45 hover:bg-white/70 border-white/80 shadow-[0_10px_30px_rgba(0,0,0,0.05),inset_0_1px_2px_rgba(255,255,255,0.95)]'
+                    ? 'bg-white/40 hover:bg-white/65 backdrop-blur-2xl border-white/80 shadow-[0_15px_35px_rgba(0,0,0,0.04),inset_0_1.5px_2px_rgba(255,255,255,0.95),inset_0_-1px_1px_rgba(0,0,0,0.03)]'
                     : 'bg-white/[0.07] hover:bg-white/[0.12] border-white/15 shadow-xl hover:border-pink-500/40'
                 }`}
               >
@@ -1126,8 +1137,8 @@ export default function App() {
                   </a>
                   <button
                     onClick={() => copyToClipboard('FazleDzakyA', 'wa')}
-                    className={`rounded-xl p-2 transition-all cursor-pointer ${
-                      isLightMode ? 'bg-white/80 hover:bg-white text-zinc-800 border border-white' : 'bg-white/10 hover:bg-white/20 text-white'
+                    className={`rounded-xl p-2 transition-all cursor-pointer backdrop-blur-md ${
+                      isLightMode ? 'bg-white/70 hover:bg-white text-zinc-800 border border-white/90 shadow-sm' : 'bg-white/10 hover:bg-white/20 text-white'
                     }`}
                     title="Copy Username Instagram"
                   >
@@ -1140,7 +1151,7 @@ export default function App() {
               <div
                 className={`group relative rounded-3xl p-5 border transition-all duration-500 overflow-hidden flex flex-col justify-between hover:-translate-y-1.5 hover:shadow-2xl ${
                   isLightMode
-                    ? 'bg-white/45 hover:bg-white/70 border-white/80 shadow-[0_10px_30px_rgba(0,0,0,0.05),inset_0_1px_2px_rgba(255,255,255,0.95)]'
+                    ? 'bg-white/40 hover:bg-white/65 backdrop-blur-2xl border-white/80 shadow-[0_15px_35px_rgba(0,0,0,0.04),inset_0_1.5px_2px_rgba(255,255,255,0.95),inset_0_-1px_1px_rgba(0,0,0,0.03)]'
                     : 'bg-white/[0.07] hover:bg-white/[0.12] border-white/15 shadow-xl hover:border-orange-500/40'
                 }`}
               >
@@ -1184,8 +1195,8 @@ export default function App() {
                   </a>
                   <button
                     onClick={() => copyToClipboard('rorngaran@gmail.com', 'email')}
-                    className={`rounded-xl p-2 transition-all cursor-pointer ${
-                      isLightMode ? 'bg-white/80 hover:bg-white text-zinc-800 border border-white' : 'bg-white/10 hover:bg-white/20 text-white'
+                    className={`rounded-xl p-2 transition-all cursor-pointer backdrop-blur-md ${
+                      isLightMode ? 'bg-white/70 hover:bg-white text-zinc-800 border border-white/90 shadow-sm' : 'bg-white/10 hover:bg-white/20 text-white'
                     }`}
                     title="Copy Alamat Email"
                   >
@@ -1198,7 +1209,7 @@ export default function App() {
               <div
                 className={`group relative rounded-3xl p-5 border transition-all duration-500 overflow-hidden flex flex-col justify-between hover:-translate-y-1.5 hover:shadow-2xl ${
                   isLightMode
-                    ? 'bg-white/45 hover:bg-white/70 border-white/80 shadow-[0_10px_30px_rgba(0,0,0,0.05),inset_0_1px_2px_rgba(255,255,255,0.95)]'
+                    ? 'bg-white/40 hover:bg-white/65 backdrop-blur-2xl border-white/80 shadow-[0_15px_35px_rgba(0,0,0,0.04),inset_0_1.5px_2px_rgba(255,255,255,0.95),inset_0_-1px_1px_rgba(0,0,0,0.03)]'
                     : 'bg-white/[0.07] hover:bg-white/[0.12] border-white/15 shadow-xl hover:border-red-500/40'
                 }`}
               >
@@ -1245,8 +1256,8 @@ export default function App() {
                   </a>
                   <button
                     onClick={() => copyToClipboard('https://github.com/FazleDzakyA/Fazaa-Journey', 'wa')}
-                    className={`rounded-xl p-2 transition-all cursor-pointer ${
-                      isLightMode ? 'bg-white/80 hover:bg-white text-zinc-800 border border-white' : 'bg-white/10 hover:bg-white/20 text-white'
+                    className={`rounded-xl p-2 transition-all cursor-pointer backdrop-blur-md ${
+                      isLightMode ? 'bg-white/70 hover:bg-white text-zinc-800 border border-white/90 shadow-sm' : 'bg-white/10 hover:bg-white/20 text-white'
                     }`}
                     title="Copy Link GitHub"
                   >
@@ -1258,7 +1269,7 @@ export default function App() {
             </div>
 
             {/* Bottom Credits */}
-            <div className={`mt-8 pt-6 border-t flex flex-col sm:flex-row items-center justify-between gap-4 text-xs ${isLightMode ? 'border-black/10 text-zinc-600' : 'border-white/10 text-white/60'}`}>
+            <div className={`mt-8 pt-6 border-t flex flex-col sm:flex-row items-center justify-between gap-4 text-xs ${isLightMode ? 'border-black/5 text-zinc-600' : 'border-white/10 text-white/60'}`}>
               <div className="flex items-center gap-2">
                 <span className={`font-bold ${isLightMode ? 'text-zinc-900' : 'text-white'}`}>FAZA ODYSSEY</span>
                 <span>•</span>
@@ -1288,10 +1299,14 @@ export default function App() {
           MODAL: MILESTONE DEEP SUMMARY
           ========================================================================= */}
       {selectedMilestone && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-2xl">
+        <div className={`fixed inset-0 z-50 flex items-center justify-center p-4 backdrop-blur-2xl ${
+          isLightMode ? 'bg-slate-900/30' : 'bg-black/80'
+        }`}>
           <div
-            className={`relative w-full max-w-lg rounded-3xl border p-6 sm:p-8 shadow-2xl animate-in fade-in zoom-in-95 duration-200 ${
-              isLightMode ? 'bg-white border-black/15 text-zinc-900' : 'bg-zinc-950 border-white/20 text-white'
+            className={`relative w-full max-w-lg rounded-3xl border p-6 sm:p-8 shadow-2xl animate-in fade-in zoom-in-95 duration-200 backdrop-blur-3xl ${
+              isLightMode
+                ? 'bg-white/85 border-white/90 shadow-[0_25px_70px_rgba(0,0,0,0.12),inset_0_1.5px_2px_white] text-zinc-900'
+                : 'bg-zinc-950/90 border-white/20 text-white'
             }`}
           >
             
@@ -1300,14 +1315,16 @@ export default function App() {
                 if (soundEnabled) playCuteSound('pop')
                 setSelectedMilestone(null)
               }}
-              className={`absolute top-5 right-5 h-8 w-8 rounded-full flex items-center justify-center transition-all cursor-pointer ${
-                isLightMode ? 'bg-black/5 hover:bg-black/10 text-zinc-700' : 'bg-white/10 hover:bg-white/20 text-white/80'
+              className={`absolute top-5 right-5 h-8 w-8 rounded-full flex items-center justify-center transition-all cursor-pointer backdrop-blur-md ${
+                isLightMode ? 'bg-white/70 hover:bg-white text-zinc-700 border border-white/90 shadow-sm' : 'bg-white/10 hover:bg-white/20 text-white/80'
               }`}
             >
               <X className="w-4 h-4" />
             </button>
 
-            <span className="inline-block rounded-full bg-red-500/20 border border-red-500/30 px-3 py-1 text-xs font-semibold text-red-500">
+            <span className={`inline-block rounded-full border px-3 py-1 text-xs font-semibold ${
+              isLightMode ? 'bg-red-500/10 border-red-500/25 text-red-600' : 'bg-red-500/20 border-red-500/30 text-red-500'
+            }`}>
               {selectedMilestone.tag}
             </span>
 
@@ -1320,8 +1337,8 @@ export default function App() {
             </p>
 
             <div
-              className={`mt-4 p-4 rounded-2xl border text-xs sm:text-sm leading-relaxed ${
-                isLightMode ? 'bg-zinc-100 border-black/10 text-zinc-700' : 'bg-white/[0.05] border-white/10 text-white/80'
+              className={`mt-4 p-4 rounded-2xl border text-xs sm:text-sm leading-relaxed backdrop-blur-md ${
+                isLightMode ? 'bg-white/50 border-white/80 text-zinc-700 shadow-[inset_0_1px_1px_white]' : 'bg-white/[0.05] border-white/10 text-white/80'
               }`}
             >
               {selectedMilestone.story}
@@ -1334,8 +1351,8 @@ export default function App() {
               {selectedMilestone.highlightProjects.map((p) => (
                 <div
                   key={p.name}
-                  className={`flex items-center justify-between text-xs p-2.5 rounded-xl border ${
-                    isLightMode ? 'bg-zinc-50 border-black/10' : 'bg-black/40 border-white/5'
+                  className={`flex items-center justify-between text-xs p-2.5 rounded-xl border backdrop-blur-md transition-all ${
+                    isLightMode ? 'bg-white/60 border-white/80 text-zinc-900 shadow-sm hover:bg-white/85' : 'bg-black/40 border-white/5'
                   }`}
                 >
                   <span className={`font-semibold ${isLightMode ? 'text-zinc-900' : 'text-white'}`}>{p.name}</span>

@@ -19,6 +19,20 @@
   background: linear-gradient(to bottom, #2B2B2B, #101010);
 }
 
+/* Glassmorphism Refraction Canvases */
+.light-grid-canvas {
+  background-image: 
+    radial-gradient(rgba(100, 116, 139, 0.16) 1.2px, transparent 1.2px),
+    radial-gradient(rgba(239, 68, 68, 0.08) 1.5px, transparent 1.5px);
+  background-size: 24px 24px, 48px 48px;
+  background-position: 0 0, 12px 12px;
+}
+
+.dark-grid-canvas {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1.2px, transparent 1.2px);
+  background-size: 28px 28px;
+}
+
 /* Custom scrollbar for modern sleek feel */
 ::-webkit-scrollbar {
   width: 6px;
