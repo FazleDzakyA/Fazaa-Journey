@@ -437,7 +437,7 @@ export default function App() {
     <div
       className={`relative min-h-screen w-full transition-colors duration-500 font-sans overflow-x-hidden selection:bg-red-500 selection:text-white ${
         isLightMode
-          ? 'bg-gradient-to-br from-[#f8fafc] via-[#eef2f7] to-[#e2e8f0] light-grid-canvas text-zinc-900'
+          ? 'bg-gradient-to-b from-white via-[#fcfdff] to-[#f8fafd] light-grid-canvas text-zinc-900'
           : 'bg-gradient-to-br from-[#0a0b12] via-[#121124] to-[#160c18] dark-grid-canvas text-white'
       }`}
     >
@@ -447,10 +447,10 @@ export default function App() {
           ========================================================================= */}
       {isLightMode ? (
         <>
-          <div className="pointer-events-none fixed -top-40 -left-40 h-[650px] w-[650px] rounded-full bg-red-500/18 blur-[140px] z-0 animate-pulse" />
-          <div className="pointer-events-none fixed top-1/3 -right-40 h-[700px] w-[700px] rounded-full bg-orange-400/16 blur-[150px] z-0" />
-          <div className="pointer-events-none fixed top-2/3 -left-40 h-[600px] w-[600px] rounded-full bg-indigo-400/16 blur-[140px] z-0" />
-          <div className="pointer-events-none fixed -bottom-40 right-1/4 h-[550px] w-[550px] rounded-full bg-emerald-400/15 blur-[130px] z-0" />
+          <div className="pointer-events-none fixed -top-40 -left-40 h-[600px] w-[600px] rounded-full bg-red-400/10 blur-[130px] z-0" />
+          <div className="pointer-events-none fixed top-1/3 -right-40 h-[650px] w-[650px] rounded-full bg-amber-300/12 blur-[140px] z-0" />
+          <div className="pointer-events-none fixed top-2/3 -left-40 h-[550px] w-[550px] rounded-full bg-rose-300/10 blur-[130px] z-0" />
+          <div className="pointer-events-none fixed -bottom-40 right-1/4 h-[500px] w-[500px] rounded-full bg-orange-300/10 blur-[120px] z-0" />
         </>
       ) : (
         <>
@@ -467,7 +467,7 @@ export default function App() {
         <div
           className={`relative flex items-center justify-between rounded-full backdrop-blur-2xl px-5 py-3 transition-all duration-500 shadow-xl ${
             isLightMode
-              ? 'bg-white/40 border border-white/80 shadow-[0_10px_35px_rgba(0,0,0,0.06),inset_0_1.5px_2px_rgba(255,255,255,0.95),inset_0_-1px_1px_rgba(0,0,0,0.03)]'
+              ? 'bg-white/65 border border-white/90 shadow-[0_10px_35px_rgba(0,0,0,0.04),inset_0_1.5px_2px_rgba(255,255,255,1)]'
               : 'bg-white/[0.08] border border-white/20 shadow-[0_8px_32px_rgba(0,0,0,0.37),inset_0_1px_1px_rgba(255,255,255,0.4)]'
           }`}
         >
@@ -692,7 +692,7 @@ export default function App() {
             <TiltGlassCard
               className={`w-full max-w-md rounded-3xl backdrop-blur-2xl border p-3.5 shadow-2xl transition-all duration-300 ${
                 isLightMode
-                  ? 'bg-white/40 border-white/80 shadow-[0_20px_50px_rgba(0,0,0,0.06),inset_0_1.5px_2px_rgba(255,255,255,0.95),inset_0_-1px_1px_rgba(0,0,0,0.03)]'
+                  ? 'bg-white/60 border-white/90 shadow-[0_20px_50px_rgba(0,0,0,0.04),inset_0_1.5px_2px_rgba(255,255,255,1)]'
                   : 'bg-white/[0.08] border-white/25 shadow-[0_20px_50px_rgba(0,0,0,0.5),inset_0_1px_1px_rgba(255,255,255,0.4)]'
               }`}
             >
@@ -701,7 +701,7 @@ export default function App() {
               <div
                 className={`relative mb-3 rounded-2xl p-3.5 shadow-lg border backdrop-blur-xl ${
                   isLightMode
-                    ? 'bg-white/75 text-zinc-900 border-white/90 shadow-[0_10px_25px_rgba(0,0,0,0.05),inset_0_1.5px_2px_white]'
+                    ? 'bg-white/85 text-zinc-900 border-white shadow-[0_10px_25px_rgba(0,0,0,0.04),inset_0_1.5px_2px_white]'
                     : 'bg-white/95 text-zinc-900 border-white'
                 }`}
               >
@@ -842,7 +842,7 @@ export default function App() {
                     <TiltGlassCard
                       className={`rounded-3xl backdrop-blur-2xl border p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 ${
                         isLightMode
-                          ? 'bg-white/40 border-white/80 text-zinc-900 shadow-[0_20px_50px_rgba(0,0,0,0.05),inset_0_1.5px_2px_rgba(255,255,255,0.95),inset_0_-1px_1px_rgba(0,0,0,0.03)] hover:border-white hover:bg-white/60 hover:shadow-[0_25px_60px_rgba(0,0,0,0.08)]'
+                          ? 'bg-white/60 border-white/90 text-zinc-900 shadow-[0_20px_50px_rgba(0,0,0,0.04),inset_0_1.5px_2px_rgba(255,255,255,1)] hover:border-white hover:bg-white/80 hover:shadow-[0_25px_60px_rgba(0,0,0,0.06)]'
                           : `bg-white/[0.07] ${item.borderColor} text-white shadow-[0_15px_35px_rgba(0,0,0,0.4),inset_0_1px_1px_rgba(255,255,255,0.25)] hover:border-white/50 hover:bg-white/[0.09]`
                       }`}
                     >
@@ -851,7 +851,7 @@ export default function App() {
                         <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
                           <span
                             className={`inline-flex items-center gap-1.5 rounded-full border px-3 py-1 text-xs font-semibold ${
-                              isLightMode ? 'bg-white/60 backdrop-blur-md border-white/90 text-zinc-800 shadow-[inset_0_1px_1px_white]' : 'bg-white/[0.1] border border-white/20 text-white/90'
+                              isLightMode ? 'bg-white/70 backdrop-blur-md border-white/95 text-zinc-800 shadow-[inset_0_1px_1px_white]' : 'bg-white/[0.1] border border-white/20 text-white/90'
                             }`}
                           >
                             <span>{item.tag}</span>
@@ -882,7 +882,7 @@ export default function App() {
                               key={p.name}
                               className={`rounded-xl border p-2.5 flex items-center justify-between gap-2 transition-all ${
                                 isLightMode
-                                  ? 'bg-white/45 backdrop-blur-md border-white/80 shadow-[inset_0_1px_2px_rgba(255,255,255,0.9)] hover:bg-white/75 hover:border-white hover:shadow-md'
+                                  ? 'bg-white/65 backdrop-blur-md border-white/90 shadow-[0_2px_8px_rgba(0,0,0,0.02),inset_0_1px_2px_rgba(255,255,255,1)] hover:bg-white/90 hover:border-white hover:shadow-md'
                                   : 'bg-black/40 border-white/10 hover:border-white/30'
                               }`}
                             >
@@ -910,7 +910,7 @@ export default function App() {
 
                         <div
                           className={`mt-4 p-3 rounded-xl border-l-2 border-red-500 text-xs italic ${
-                            isLightMode ? 'bg-white/40 backdrop-blur-md border border-white/80 shadow-[inset_0_1px_2px_rgba(255,255,255,0.8)] text-zinc-700' : 'bg-white/[0.04] text-white/70'
+                            isLightMode ? 'bg-white/60 backdrop-blur-md border border-white/90 shadow-[inset_0_1px_2px_rgba(255,255,255,1)] text-zinc-700' : 'bg-white/[0.04] text-white/70'
                           }`}
                         >
                           {item.quote}
@@ -969,7 +969,7 @@ export default function App() {
         <div
           className={`relative rounded-3xl border p-8 sm:p-12 backdrop-blur-3xl shadow-2xl overflow-hidden ${
             isLightMode
-              ? 'bg-gradient-to-br from-white/45 via-white/30 to-white/40 border-white/80 shadow-[0_25px_60px_rgba(0,0,0,0.06),inset_0_1.5px_2px_rgba(255,255,255,0.95),inset_0_-1px_1px_rgba(0,0,0,0.03)]'
+              ? 'bg-gradient-to-br from-white/70 via-white/55 to-white/65 border-white/90 shadow-[0_25px_60px_rgba(0,0,0,0.04),inset_0_1.5px_2px_rgba(255,255,255,1)]'
               : 'bg-gradient-to-br from-white/[0.09] via-white/[0.05] to-black/60 border-white/20 shadow-[0_25px_60px_rgba(0,0,0,0.5),inset_0_1px_1px_rgba(255,255,255,0.4)]'
           }`}
         >
@@ -1026,7 +1026,7 @@ export default function App() {
               <div
                 className={`group relative rounded-3xl p-5 border transition-all duration-500 overflow-hidden flex flex-col justify-between hover:-translate-y-1.5 hover:shadow-2xl ${
                   isLightMode
-                    ? 'bg-white/40 hover:bg-white/65 backdrop-blur-2xl border-white/80 shadow-[0_15px_35px_rgba(0,0,0,0.04),inset_0_1.5px_2px_rgba(255,255,255,0.95),inset_0_-1px_1px_rgba(0,0,0,0.03)]'
+                    ? 'bg-white/60 hover:bg-white/85 backdrop-blur-2xl border-white/90 shadow-[0_15px_35px_rgba(0,0,0,0.03),inset_0_1.5px_2px_rgba(255,255,255,1)]'
                     : 'bg-white/[0.07] hover:bg-white/[0.12] border-white/15 shadow-xl hover:border-emerald-500/40'
                 }`}
               >
@@ -1090,7 +1090,7 @@ export default function App() {
               <div
                 className={`group relative rounded-3xl p-5 border transition-all duration-500 overflow-hidden flex flex-col justify-between hover:-translate-y-1.5 hover:shadow-2xl ${
                   isLightMode
-                    ? 'bg-white/40 hover:bg-white/65 backdrop-blur-2xl border-white/80 shadow-[0_15px_35px_rgba(0,0,0,0.04),inset_0_1.5px_2px_rgba(255,255,255,0.95),inset_0_-1px_1px_rgba(0,0,0,0.03)]'
+                    ? 'bg-white/60 hover:bg-white/85 backdrop-blur-2xl border-white/90 shadow-[0_15px_35px_rgba(0,0,0,0.03),inset_0_1.5px_2px_rgba(255,255,255,1)]'
                     : 'bg-white/[0.07] hover:bg-white/[0.12] border-white/15 shadow-xl hover:border-pink-500/40'
                 }`}
               >
@@ -1151,7 +1151,7 @@ export default function App() {
               <div
                 className={`group relative rounded-3xl p-5 border transition-all duration-500 overflow-hidden flex flex-col justify-between hover:-translate-y-1.5 hover:shadow-2xl ${
                   isLightMode
-                    ? 'bg-white/40 hover:bg-white/65 backdrop-blur-2xl border-white/80 shadow-[0_15px_35px_rgba(0,0,0,0.04),inset_0_1.5px_2px_rgba(255,255,255,0.95),inset_0_-1px_1px_rgba(0,0,0,0.03)]'
+                    ? 'bg-white/60 hover:bg-white/85 backdrop-blur-2xl border-white/90 shadow-[0_15px_35px_rgba(0,0,0,0.03),inset_0_1.5px_2px_rgba(255,255,255,1)]'
                     : 'bg-white/[0.07] hover:bg-white/[0.12] border-white/15 shadow-xl hover:border-orange-500/40'
                 }`}
               >
@@ -1209,7 +1209,7 @@ export default function App() {
               <div
                 className={`group relative rounded-3xl p-5 border transition-all duration-500 overflow-hidden flex flex-col justify-between hover:-translate-y-1.5 hover:shadow-2xl ${
                   isLightMode
-                    ? 'bg-white/40 hover:bg-white/65 backdrop-blur-2xl border-white/80 shadow-[0_15px_35px_rgba(0,0,0,0.04),inset_0_1.5px_2px_rgba(255,255,255,0.95),inset_0_-1px_1px_rgba(0,0,0,0.03)]'
+                    ? 'bg-white/60 hover:bg-white/85 backdrop-blur-2xl border-white/90 shadow-[0_15px_35px_rgba(0,0,0,0.03),inset_0_1.5px_2px_rgba(255,255,255,1)]'
                     : 'bg-white/[0.07] hover:bg-white/[0.12] border-white/15 shadow-xl hover:border-red-500/40'
                 }`}
               >
