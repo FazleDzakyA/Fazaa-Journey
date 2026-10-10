@@ -1,0 +1,18 @@
+{
+  "name": "FAZA — Career Odyssey",
+  "short_name": "FAZA Odyssey",
+  "description": "Perjalanan Karir & Portfolio Fazle Dzaky Aryaguna (FAZA) dengan Falcon Guardian",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#0a0b12",
+  "theme_color": "#ef4444",
+  "icons": [
+    {
+      "src": "/faza-falcon-upper.jpg",
+      "sizes": "192x192 512x512",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    }
+  ]
+}
