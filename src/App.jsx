@@ -996,7 +996,7 @@ export default function App() {
               </div>
 
               <a
-                href="https://wa.me/6281234567890?text=Halo%20Faza,%20saya%20tertarik%20dengan%20portofolio%20dan%20perjalanan%20karirmu!"
+                href="https://wa.me/6281311636736?text=Halo%20Faza,%20saya%20tertarik%20dengan%20portofolio%20dan%20perjalanan%20karirmu!"
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => soundEnabled && playCuteSound('pop')}
@@ -1041,7 +1041,7 @@ export default function App() {
                     WhatsApp Messenger
                   </h4>
                   <p className={`text-xs font-mono font-semibold text-emerald-500 mt-0.5`}>
-                    +62 812-3456-7890
+                    +62 813-1163-6736
                   </p>
 
                   {/* Hover-Revealed Detail Story */}
@@ -1055,7 +1055,7 @@ export default function App() {
                 {/* Hover-Revealed Action Bar */}
                 <div className="relative z-10 mt-5 pt-3 border-t border-black/5 dark:border-white/10 flex items-center gap-2">
                   <a
-                    href="https://wa.me/6281234567890?text=Halo%20Faza,%20saya%20tertarik%20dengan%20portofolio%20dan%20perjalanan%20karirmu!"
+                    href="https://wa.me/6281311636736?text=Halo%20Faza,%20saya%20tertarik%20dengan%20portofolio%20dan%20perjalanan%20karirmu!"
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={() => soundEnabled && playCuteSound('pop')}
@@ -1064,7 +1064,7 @@ export default function App() {
                     Buka WhatsApp
                   </a>
                   <button
-                    onClick={() => copyToClipboard('https://wa.me/6281234567890', 'wa')}
+                    onClick={() => copyToClipboard('https://wa.me/6281311636736', 'wa')}
                     className={`rounded-xl p-2 transition-all cursor-pointer ${
                       isLightMode ? 'bg-white/80 hover:bg-white text-zinc-800 border border-white' : 'bg-white/10 hover:bg-white/20 text-white'
                     }`}
