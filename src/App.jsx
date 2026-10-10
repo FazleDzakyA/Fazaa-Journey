@@ -685,9 +685,9 @@ export default function App() {
           {/* Right Hero: Upper Body Avatar Glass Card */}
           <div className="lg:col-span-5 flex justify-center">
             <TiltGlassCard
-              className={`w-full max-w-md rounded-3xl backdrop-blur-2xl border p-3.5 shadow-2xl ${
+              className={`w-full max-w-md rounded-3xl backdrop-blur-2xl border p-3.5 shadow-2xl transition-all duration-300 ${
                 isLightMode
-                  ? 'bg-white/85 border-black/15 shadow-[0_20px_50px_rgba(0,0,0,0.12)]'
+                  ? 'bg-white/45 border-white/80 shadow-[0_20px_50px_rgba(0,0,0,0.06),inset_0_1px_2px_rgba(255,255,255,0.95)]'
                   : 'bg-white/[0.08] border-white/25 shadow-[0_20px_50px_rgba(0,0,0,0.5),inset_0_1px_1px_rgba(255,255,255,0.4)]'
               }`}
             >
@@ -835,7 +835,7 @@ export default function App() {
                     <TiltGlassCard
                       className={`rounded-3xl backdrop-blur-2xl border p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 ${
                         isLightMode
-                          ? 'bg-white/80 border-black/10 text-zinc-900 shadow-[0_15px_35px_rgba(0,0,0,0.08)] hover:border-black/30 hover:bg-white/95'
+                          ? 'bg-white/45 border-white/80 text-zinc-900 shadow-[0_15px_35px_rgba(0,0,0,0.05),inset_0_1px_2px_rgba(255,255,255,0.95)] hover:border-white hover:bg-white/65 hover:shadow-[0_20px_45px_rgba(0,0,0,0.1)]'
                           : `bg-white/[0.07] ${item.borderColor} text-white shadow-[0_15px_35px_rgba(0,0,0,0.4),inset_0_1px_1px_rgba(255,255,255,0.25)] hover:border-white/50 hover:bg-white/[0.09]`
                       }`}
                     >
@@ -1008,132 +1008,249 @@ export default function App() {
 
             </div>
 
-            {/* Profile Information Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-8">
+            {/* Profile Information Grid: Ultra-Glassy Hover-Expand Interactive Pods */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 mt-8">
               
-              {/* Box 1: Status */}
+              {/* Box 1: WhatsApp Glass Pod */}
               <div
-                className={`rounded-2xl border p-4 backdrop-blur-md ${
-                  isLightMode ? 'bg-zinc-100/90 border-black/10' : 'bg-black/40 border-white/10'
+                className={`group relative rounded-3xl p-5 border transition-all duration-500 overflow-hidden flex flex-col justify-between hover:-translate-y-1.5 hover:shadow-2xl ${
+                  isLightMode
+                    ? 'bg-white/45 hover:bg-white/70 border-white/80 shadow-[0_10px_30px_rgba(0,0,0,0.05),inset_0_1px_2px_rgba(255,255,255,0.95)]'
+                    : 'bg-white/[0.07] hover:bg-white/[0.12] border-white/15 shadow-xl hover:border-emerald-500/40'
                 }`}
               >
-                <div className={`text-xs font-mono uppercase tracking-wider mb-1 ${isLightMode ? 'text-zinc-500' : 'text-white/50'}`}>
-                  Status & Peran
-                </div>
-                <div className={`text-sm font-bold ${isLightMode ? 'text-zinc-900' : 'text-white'}`}>
-                  Developer & Student
-                </div>
-                <p className={`text-xs mt-1 ${isLightMode ? 'text-zinc-600' : 'text-white/60'}`}>
-                  Aktif merancang fullstack app, Kotlin Android, dan eksplorasi AI.
-                </p>
-                <div className="mt-3 text-xs text-emerald-600 font-semibold flex items-center gap-1">
-                  <span>📍 Lokasi: Indonesia 🇮🇩</span>
-                </div>
-              </div>
+                {/* Emerald Ambient Glow on Hover */}
+                <div className="pointer-events-none absolute -right-10 -top-10 h-32 w-32 rounded-full bg-emerald-500/20 blur-2xl group-hover:scale-150 transition-transform duration-700" />
+                
+                {/* Header Pod */}
+                <div className="relative z-10">
+                  <div className="flex items-center justify-between mb-4">
+                    {/* Glassy 3D WhatsApp Icon Orb */}
+                    <div className="relative h-12 w-12 rounded-2xl bg-gradient-to-tr from-emerald-600 to-teal-400 p-[1.5px] shadow-lg shadow-emerald-500/30 group-hover:scale-110 transition-transform duration-300">
+                      <div className="h-full w-full rounded-2xl bg-emerald-950/40 backdrop-blur-md flex items-center justify-center text-white">
+                        <MessageCircle className="w-6 h-6 text-emerald-300 animate-pulse" />
+                      </div>
+                    </div>
 
-              {/* Box 2: WhatsApp Number */}
-              <div
-                className={`rounded-2xl border p-4 backdrop-blur-md flex flex-col justify-between ${
-                  isLightMode ? 'bg-zinc-100/90 border-black/10' : 'bg-black/40 border-white/10'
-                }`}
-              >
-                <div>
-                  <div className={`text-xs font-mono uppercase tracking-wider mb-1 flex items-center justify-between ${isLightMode ? 'text-zinc-500' : 'text-white/50'}`}>
-                    <span>Nomor WhatsApp</span>
-                    <Phone className="w-3.5 h-3.5 text-emerald-500" />
+                    <span className="inline-flex items-center gap-1 rounded-full bg-emerald-500/15 border border-emerald-500/30 px-2.5 py-0.5 text-[10px] font-mono font-bold text-emerald-500">
+                      ● ONLINE
+                    </span>
                   </div>
-                  <div className={`text-sm font-bold font-mono ${isLightMode ? 'text-zinc-900' : 'text-white'}`}>
-                    WhatsApp Available
-                  </div>
-                  <p className={`text-xs mt-1 ${isLightMode ? 'text-zinc-600' : 'text-white/60'}`}>
-                    Hubungi untuk proyek freelance atau diskusi rekayasa perangkat lunak.
+
+                  <h4 className={`text-base font-extrabold ${isLightMode ? 'text-zinc-950' : 'text-white'}`}>
+                    WhatsApp Messenger
+                  </h4>
+                  <p className={`text-xs font-mono font-semibold text-emerald-500 mt-0.5`}>
+                    +62 812-3456-7890
                   </p>
+
+                  {/* Hover-Revealed Detail Story */}
+                  <div className="mt-3 text-xs leading-relaxed transition-all duration-300 opacity-80 group-hover:opacity-100">
+                    <p className={isLightMode ? 'text-zinc-600' : 'text-white/70'}>
+                      Fast response untuk tawaran freelance, kolaborasi web/mobile, atau diskusi teknologi.
+                    </p>
+                  </div>
                 </div>
-                <div className="mt-3 flex items-center gap-2">
+
+                {/* Hover-Revealed Action Bar */}
+                <div className="relative z-10 mt-5 pt-3 border-t border-black/5 dark:border-white/10 flex items-center gap-2">
                   <a
-                    href="https://wa.me/6281234567890"
+                    href="https://wa.me/6281234567890?text=Halo%20Faza,%20saya%20tertarik%20dengan%20portofolio%20dan%20perjalanan%20karirmu!"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-1 rounded-xl bg-emerald-500/15 hover:bg-emerald-500/25 border border-emerald-500/30 py-1.5 text-center text-xs font-semibold text-emerald-600 transition-colors"
+                    onClick={() => soundEnabled && playCuteSound('pop')}
+                    className="flex-1 rounded-xl bg-emerald-600 hover:bg-emerald-500 py-2 text-center text-xs font-bold text-white shadow-md shadow-emerald-600/30 transition-all hover:scale-102 cursor-pointer"
                   >
-                    Buka WA
+                    Buka WhatsApp
                   </a>
                   <button
                     onClick={() => copyToClipboard('https://wa.me/6281234567890', 'wa')}
-                    className={`rounded-xl p-2 transition-colors cursor-pointer ${
-                      isLightMode ? 'bg-black/5 hover:bg-black/10 text-zinc-700' : 'bg-white/10 hover:bg-white/20 text-white/80'
+                    className={`rounded-xl p-2 transition-all cursor-pointer ${
+                      isLightMode ? 'bg-white/80 hover:bg-white text-zinc-800 border border-white' : 'bg-white/10 hover:bg-white/20 text-white'
                     }`}
-                    title="Copy Link WA"
+                    title="Copy Link WhatsApp"
                   >
                     {copiedWA ? <Check className="w-3.5 h-3.5 text-emerald-500" /> : <Copy className="w-3.5 h-3.5" />}
                   </button>
                 </div>
               </div>
 
-              {/* Box 3: Instagram */}
+              {/* Box 2: Instagram Glass Pod */}
               <div
-                className={`rounded-2xl border p-4 backdrop-blur-md flex flex-col justify-between ${
-                  isLightMode ? 'bg-zinc-100/90 border-black/10' : 'bg-black/40 border-white/10'
+                className={`group relative rounded-3xl p-5 border transition-all duration-500 overflow-hidden flex flex-col justify-between hover:-translate-y-1.5 hover:shadow-2xl ${
+                  isLightMode
+                    ? 'bg-white/45 hover:bg-white/70 border-white/80 shadow-[0_10px_30px_rgba(0,0,0,0.05),inset_0_1px_2px_rgba(255,255,255,0.95)]'
+                    : 'bg-white/[0.07] hover:bg-white/[0.12] border-white/15 shadow-xl hover:border-pink-500/40'
                 }`}
               >
-                <div>
-                  <div className={`text-xs font-mono uppercase tracking-wider mb-1 flex items-center justify-between ${isLightMode ? 'text-zinc-500' : 'text-white/50'}`}>
-                    <span>Instagram</span>
-                    <InstagramIcon className="w-3.5 h-3.5 text-pink-500" />
+                {/* Pink Ambient Glow on Hover */}
+                <div className="pointer-events-none absolute -right-10 -top-10 h-32 w-32 rounded-full bg-pink-500/20 blur-2xl group-hover:scale-150 transition-transform duration-700" />
+
+                <div className="relative z-10">
+                  <div className="flex items-center justify-between mb-4">
+                    {/* Glassy 3D Instagram Icon Orb */}
+                    <div className="relative h-12 w-12 rounded-2xl bg-gradient-to-tr from-pink-600 via-rose-500 to-amber-400 p-[1.5px] shadow-lg shadow-pink-500/30 group-hover:scale-110 transition-transform duration-300">
+                      <div className="h-full w-full rounded-2xl bg-pink-950/40 backdrop-blur-md flex items-center justify-center text-white">
+                        <InstagramIcon className="w-6 h-6 text-pink-300" />
+                      </div>
+                    </div>
+
+                    <span className="inline-flex items-center gap-1 rounded-full bg-pink-500/15 border border-pink-500/30 px-2.5 py-0.5 text-[10px] font-mono font-bold text-pink-500">
+                      CREATIVE
+                    </span>
                   </div>
-                  <div className={`text-sm font-bold ${isLightMode ? 'text-zinc-900' : 'text-white'}`}>
+
+                  <h4 className={`text-base font-extrabold ${isLightMode ? 'text-zinc-950' : 'text-white'}`}>
+                    Instagram
+                  </h4>
+                  <p className={`text-xs font-mono font-semibold text-pink-500 mt-0.5`}>
                     @FazleDzakyA
-                  </div>
-                  <p className={`text-xs mt-1 ${isLightMode ? 'text-zinc-600' : 'text-white/60'}`}>
-                    Ikuti perjalanan kreatif, update harian, dan karya digital.
                   </p>
+
+                  <div className="mt-3 text-xs leading-relaxed transition-all duration-300 opacity-80 group-hover:opacity-100">
+                    <p className={isLightMode ? 'text-zinc-600' : 'text-white/70'}>
+                      Ikuti update eksplorasi koding harian, momen kehidupan, dan inspirasi visual.
+                    </p>
+                  </div>
                 </div>
-                <div className="mt-3">
+
+                <div className="relative z-10 mt-5 pt-3 border-t border-black/5 dark:border-white/10 flex items-center gap-2">
                   <a
                     href="https://instagram.com/FazleDzakyA"
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={() => soundEnabled && playCuteSound('sparkle')}
-                    className="block w-full rounded-xl bg-pink-500/15 hover:bg-pink-500/25 border border-pink-500/30 py-1.5 text-center text-xs font-semibold text-pink-600 transition-colors"
+                    className="flex-1 rounded-xl bg-gradient-to-r from-pink-600 to-rose-500 hover:from-pink-500 hover:to-rose-400 py-2 text-center text-xs font-bold text-white shadow-md shadow-pink-500/30 transition-all hover:scale-102 cursor-pointer"
                   >
-                    Kunjungi Instagram
+                    Buka Instagram
                   </a>
+                  <button
+                    onClick={() => copyToClipboard('FazleDzakyA', 'wa')}
+                    className={`rounded-xl p-2 transition-all cursor-pointer ${
+                      isLightMode ? 'bg-white/80 hover:bg-white text-zinc-800 border border-white' : 'bg-white/10 hover:bg-white/20 text-white'
+                    }`}
+                    title="Copy Username Instagram"
+                  >
+                    <Copy className="w-3.5 h-3.5" />
+                  </button>
                 </div>
               </div>
 
-              {/* Box 4: Email */}
+              {/* Box 3: Email Glass Pod */}
               <div
-                className={`rounded-2xl border p-4 backdrop-blur-md flex flex-col justify-between ${
-                  isLightMode ? 'bg-zinc-100/90 border-black/10' : 'bg-black/40 border-white/10'
+                className={`group relative rounded-3xl p-5 border transition-all duration-500 overflow-hidden flex flex-col justify-between hover:-translate-y-1.5 hover:shadow-2xl ${
+                  isLightMode
+                    ? 'bg-white/45 hover:bg-white/70 border-white/80 shadow-[0_10px_30px_rgba(0,0,0,0.05),inset_0_1px_2px_rgba(255,255,255,0.95)]'
+                    : 'bg-white/[0.07] hover:bg-white/[0.12] border-white/15 shadow-xl hover:border-orange-500/40'
                 }`}
               >
-                <div>
-                  <div className={`text-xs font-mono uppercase tracking-wider mb-1 flex items-center justify-between ${isLightMode ? 'text-zinc-500' : 'text-white/50'}`}>
-                    <span>Email Kontak</span>
-                    <Mail className="w-3.5 h-3.5 text-orange-500" />
+                {/* Amber Ambient Glow on Hover */}
+                <div className="pointer-events-none absolute -right-10 -top-10 h-32 w-32 rounded-full bg-orange-500/20 blur-2xl group-hover:scale-150 transition-transform duration-700" />
+
+                <div className="relative z-10">
+                  <div className="flex items-center justify-between mb-4">
+                    {/* Glassy 3D Email Icon Orb */}
+                    <div className="relative h-12 w-12 rounded-2xl bg-gradient-to-tr from-amber-500 to-orange-500 p-[1.5px] shadow-lg shadow-orange-500/30 group-hover:scale-110 transition-transform duration-300">
+                      <div className="h-full w-full rounded-2xl bg-orange-950/40 backdrop-blur-md flex items-center justify-center text-white">
+                        <Mail className="w-6 h-6 text-orange-300" />
+                      </div>
+                    </div>
+
+                    <span className="inline-flex items-center gap-1 rounded-full bg-orange-500/15 border border-orange-500/30 px-2.5 py-0.5 text-[10px] font-mono font-bold text-orange-500">
+                      OFFICIAL
+                    </span>
                   </div>
-                  <div className={`text-sm font-bold font-mono truncate ${isLightMode ? 'text-zinc-900' : 'text-white'}`}>
+
+                  <h4 className={`text-base font-extrabold ${isLightMode ? 'text-zinc-950' : 'text-white'}`}>
+                    Email Resmi
+                  </h4>
+                  <p className={`text-xs font-mono font-semibold text-orange-500 mt-0.5 truncate`}>
                     rorngaran@gmail.com
-                  </div>
-                  <p className={`text-xs mt-1 ${isLightMode ? 'text-zinc-600' : 'text-white/60'}`}>
-                    Tersedia untuk peluang kolaborasi resmi.
                   </p>
+
+                  <div className="mt-3 text-xs leading-relaxed transition-all duration-300 opacity-80 group-hover:opacity-100">
+                    <p className={isLightMode ? 'text-zinc-600' : 'text-white/70'}>
+                      Saluran resmi untuk rekrutmen profesional, tawaran kontrak, atau komunikasi formal.
+                    </p>
+                  </div>
                 </div>
-                <div className="mt-3 flex items-center gap-2">
+
+                <div className="relative z-10 mt-5 pt-3 border-t border-black/5 dark:border-white/10 flex items-center gap-2">
                   <a
                     href="mailto:rorngaran@gmail.com"
-                    className="flex-1 rounded-xl bg-orange-500/15 hover:bg-orange-500/25 border border-orange-500/30 py-1.5 text-center text-xs font-semibold text-orange-600 transition-colors"
+                    className="flex-1 rounded-xl bg-gradient-to-r from-orange-600 to-amber-500 hover:from-orange-500 hover:to-amber-400 py-2 text-center text-xs font-bold text-white shadow-md shadow-orange-500/30 transition-all hover:scale-102 cursor-pointer"
                   >
                     Kirim Email
                   </a>
                   <button
                     onClick={() => copyToClipboard('rorngaran@gmail.com', 'email')}
-                    className={`rounded-xl p-2 transition-colors cursor-pointer ${
-                      isLightMode ? 'bg-black/5 hover:bg-black/10 text-zinc-700' : 'bg-white/10 hover:bg-white/20 text-white/80'
+                    className={`rounded-xl p-2 transition-all cursor-pointer ${
+                      isLightMode ? 'bg-white/80 hover:bg-white text-zinc-800 border border-white' : 'bg-white/10 hover:bg-white/20 text-white'
                     }`}
-                    title="Copy Email"
+                    title="Copy Alamat Email"
                   >
                     {copiedEmail ? <Check className="w-3.5 h-3.5 text-orange-500" /> : <Copy className="w-3.5 h-3.5" />}
+                  </button>
+                </div>
+              </div>
+
+              {/* Box 4: GitHub Glass Pod */}
+              <div
+                className={`group relative rounded-3xl p-5 border transition-all duration-500 overflow-hidden flex flex-col justify-between hover:-translate-y-1.5 hover:shadow-2xl ${
+                  isLightMode
+                    ? 'bg-white/45 hover:bg-white/70 border-white/80 shadow-[0_10px_30px_rgba(0,0,0,0.05),inset_0_1px_2px_rgba(255,255,255,0.95)]'
+                    : 'bg-white/[0.07] hover:bg-white/[0.12] border-white/15 shadow-xl hover:border-red-500/40'
+                }`}
+              >
+                {/* Red Ambient Glow on Hover */}
+                <div className="pointer-events-none absolute -right-10 -top-10 h-32 w-32 rounded-full bg-red-600/20 blur-2xl group-hover:scale-150 transition-transform duration-700" />
+
+                <div className="relative z-10">
+                  <div className="flex items-center justify-between mb-4">
+                    {/* Glassy 3D GitHub Icon Orb */}
+                    <div className="relative h-12 w-12 rounded-2xl bg-gradient-to-tr from-red-600 to-orange-500 p-[1.5px] shadow-lg shadow-red-500/30 group-hover:scale-110 transition-transform duration-300">
+                      <div className="h-full w-full rounded-2xl bg-red-950/40 backdrop-blur-md flex items-center justify-center text-white">
+                        <GithubIcon className="w-6 h-6 text-red-300" />
+                      </div>
+                    </div>
+
+                    <span className="inline-flex items-center gap-1 rounded-full bg-red-500/15 border border-red-500/30 px-2.5 py-0.5 text-[10px] font-mono font-bold text-red-500">
+                      35+ REPOS
+                    </span>
+                  </div>
+
+                  <h4 className={`text-base font-extrabold ${isLightMode ? 'text-zinc-950' : 'text-white'}`}>
+                    GitHub Profile
+                  </h4>
+                  <p className={`text-xs font-mono font-semibold text-red-500 mt-0.5 truncate`}>
+                    github.com/FazleDzakyA
+                  </p>
+
+                  <div className="mt-3 text-xs leading-relaxed transition-all duration-300 opacity-80 group-hover:opacity-100">
+                    <p className={isLightMode ? 'text-zinc-600' : 'text-white/70'}>
+                      Pusat seluruh commit, repositori GlowMate, Android Native, POS, AI Vision, dan web kenangan.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="relative z-10 mt-5 pt-3 border-t border-black/5 dark:border-white/10 flex items-center gap-2">
+                  <a
+                    href="https://github.com/FazleDzakyA/Fazaa-Journey"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => soundEnabled && playCuteSound('pop')}
+                    className="flex-1 rounded-xl bg-gradient-to-r from-red-600 to-orange-500 hover:from-red-500 hover:to-orange-400 py-2 text-center text-xs font-bold text-white shadow-md shadow-red-500/30 transition-all hover:scale-102 cursor-pointer"
+                  >
+                    Buka Repo
+                  </a>
+                  <button
+                    onClick={() => copyToClipboard('https://github.com/FazleDzakyA/Fazaa-Journey', 'wa')}
+                    className={`rounded-xl p-2 transition-all cursor-pointer ${
+                      isLightMode ? 'bg-white/80 hover:bg-white text-zinc-800 border border-white' : 'bg-white/10 hover:bg-white/20 text-white'
+                    }`}
+                    title="Copy Link GitHub"
+                  >
+                    <Copy className="w-3.5 h-3.5" />
                   </button>
                 </div>
               </div>
